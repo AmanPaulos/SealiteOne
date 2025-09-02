@@ -1,17 +1,16 @@
-
-function tableToCsv(tableId){
-  const table = document.getElementById(tableId);
-  if(!table) return '';
-  const rows = Array.from(table.querySelectorAll('tr')).map(tr => Array.from(tr.children).map(td => '"'+(td.innerText||'').replace(/"/g,'""')+'"').join(','));
-  return rows.join('\n');
-}
-function exportCsv(tableId, filename){
-  const csv = tableToCsv(tableId);
-  const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = filename || 'export.csv';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
+document.addEventListener('DOMContentLoaded', function(){
+  var btn = document.getElementById('menuBtn');
+  var nav = document.querySelector('.nav');
+  var backdrop = document.getElementById('navBackdrop');
+  function closeNav(){
+    if(nav) nav.classList.remove('open');
+    if(backdrop) backdrop.classList.remove('show');
+  }
+  if(btn){
+    btn.addEventListener('click', function(){
+      if(nav) nav.classList.toggle('open');
+      if(backdrop) backdrop.classList.toggle('show');
+    });
+  }
+  if(backdrop){ backdrop.addEventListener('click', closeNav); }
+});

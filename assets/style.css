@@ -103,7 +103,32 @@ a:hover{color:var(--brand-2)}
 .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
 .note{color:var(--muted); font-size:12px}
 footer{margin-top:20px; padding:14px; color:var(--muted)}
+/* replace the old mobile rule that hid .nav */
 @media(max-width:960px){
-  .app{grid-template-columns:1fr}
-  .nav{display:none}
+  .app{grid-template-columns:1fr; grid-template-areas:"top" "main"}
+  .nav{
+    position: fixed; top:56px; left:0; bottom:0; width:280px;
+    background:#fff; border-right:1px solid var(--border);
+    transform: translateX(-100%); transition: transform .2s ease;
+    z-index:40; overflow:auto; padding:12px; box-shadow: var(--shadow);
+  }
+  .nav.open{ transform: translateX(0) }
+  .nav-backdrop{ position:fixed; inset:56px 0 0 0; background:rgba(2,6,23,.4); display:none; z-index:30 }
+  .nav-backdrop.show{ display:block }
+  .show-mobile{ display:inline-flex }
+  .hide-mobile{ display:none }
+  .search{ display:none }
 }
+
+/* responsive additions */
+.toolbar{ flex-wrap: wrap }
+.cards{ grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) }
+.grid-2{ grid-template-columns: 1fr 1fr }
+.grid-3{ grid-template-columns: 1fr 1fr 1fr }
+@media(max-width:1024px){ .grid-3{ grid-template-columns: 1fr 1fr } }
+@media(max-width:640px){ .grid-2,.grid-3{ grid-template-columns: 1fr } }
+
+/* tables scroll on small screens */
+.table{ display:block; width:100%; overflow-x:auto; border:1px solid var(--border); border-radius:10px }
+.table table{ width:100%; border-collapse:collapse }
+

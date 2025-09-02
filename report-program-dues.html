@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><head>
+      <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <title>Program Dues — SealiteOne</title>
+      <link rel="icon" href="assets/logo.svg"/>
+      <link rel="stylesheet" href="assets/style.css"/>
+      <script defer src="assets/app.js"></script>
+    </head><body>
+    <div class="app">
+      <div class="topbar">
+        <a class="logo" href="index.html"><img class="brandmark" src="assets/logo.svg" alt="logo"/>
+          <div><div>SealiteOne</div><div class="logo-sub">Edmonton Se’alite Mihret St. Mary Church</div></div>
+        </a>
+        <div class="search">
+          <input placeholder="Search members, invoices, services…"/><span class="icon">🔎</span>
+        </div>
+        <a class="icon-btn" href="quick-add.html" title="Quick Add">＋</a>
+        <a class="icon-btn" href="inbox.html" title="Inbox">🔔</a>
+      </div>
+      
+    <nav class="nav">
+      <div class="section">Main</div>
+      <a href="index.html" class="">Dashboard</a>
+      <a href="members.html" class="">Members</a>
+      <a href="services.html" class="">Services</a>
+      <a href="sunday-school.html" class="">Sunday School</a>
+      <a href="abenet-school.html" class="">Abenet School</a>
+      <a href="billing.html" class="">Billing</a>
+      <a href="sponsorship.html" class="">Sponsorship</a>
+      <a href="settlement.html" class="">Settlement</a>
+      <a href="volunteers.html" class="">Volunteers</a>
+      <a href="councils.html" class="">Councils</a>
+      <a href="media.html" class="">Media</a>
+      <a href="reports.html" class="active">Reports</a>
+      <div class="section">Admin</div>
+      <a href="admin.html" class="">Admin & Settings</a>
+      <a href="login.html" class="">Logout</a>
+    </nav>
+    
+      <main class="main"><div class="page"><div class="breadcrumbs">Home › Reports › Program Dues</div><div class="h1">Program Dues</div>
+<div class="toolbar">
+  <div class="field"><label>Program</label><select class="input"><option>All</option><option>Sunday School</option><option>Abenet School</option></select></div>
+  <div class="field" style="flex:1"><label>Search</label><input class="input" placeholder="Name or class/track"/></div>
+  <a class="btn" href="#" onclick="exportCsv('program-dues-table','program-dues.csv');return false;">Export CSV</a>
+</div>
+<table class="table" id="program-dues-table"><thead><tr><th>Program</th><th>Name</th><th>Class/Track</th><th>Start</th><th>Last Payment</th><th>Monthly Fee</th></tr></thead>
+<tbody>
+  <tr><td>Sunday School</td><td>Michael Doe</td><td>Child — Level 2</td><td>2025-07-01</td><td>2025-08-01</td><td>$25.00</td></tr>
+  <tr><td>Abenet School</td><td>Sarah Tesfa</td><td>Reading</td><td>2025-06-01</td><td>2025-08-01</td><td>$25.00</td></tr>
+</tbody></table>
+<footer>© SealiteOne</footer></div></main>
+    </div></body></html>
